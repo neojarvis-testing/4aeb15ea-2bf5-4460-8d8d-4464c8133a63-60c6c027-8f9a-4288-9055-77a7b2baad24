@@ -162,6 +162,7 @@ public class WebDriverHelper {
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
             
+            
         }
     }
     /*

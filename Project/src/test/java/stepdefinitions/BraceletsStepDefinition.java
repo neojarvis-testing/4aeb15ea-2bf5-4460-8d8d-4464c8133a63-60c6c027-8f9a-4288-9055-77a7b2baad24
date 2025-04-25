@@ -50,6 +50,7 @@ public void i_verify_the_page_that_loads_with_relevant_content(String string) {
 }
 @When("I  verify the page {string}")
 public void i_verify_the_page(String string) {
+    braceletactions.clickOnBraceletInStyle();
     braceletactions.verifyBracelets(string);
 }
 @When("I click on the first product")

@@ -12,9 +12,10 @@ public class Assertion {
 	private WebDriver driver;
 	ExtentTest test;
 	LoggerHandler logs;
-	public Assertion(WebDriver driver, LoggerHandler logs) {
+	public Assertion(WebDriver driver, LoggerHandler logs,ExtentTest test) {
 		this.driver = driver;
 		this.logs = logs;
+		this.test = test;
 	}
     /*
      * Method Name : verifyTextInPage
