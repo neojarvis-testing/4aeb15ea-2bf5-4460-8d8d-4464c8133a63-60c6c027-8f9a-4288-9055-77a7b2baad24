@@ -13,6 +13,5 @@ public class ContactPageLocators {
     public static By affrim = By.xpath("//a[text()='Affirm Finance']");
     public static By feedback = By.xpath("//a[text()='Your Feedback']");
     public static By info = By.xpath("//span[text()='Information']");
-    
 
 }

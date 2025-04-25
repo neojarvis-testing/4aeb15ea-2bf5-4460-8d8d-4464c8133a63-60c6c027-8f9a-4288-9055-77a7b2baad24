@@ -12,5 +12,5 @@ public class HomePageLocators {
     public static By discoverWatches =By.xpath("(//p[@class='rlx-bold rlx-body20 txt-rlx-brown'])[1]");
     public static By newWatches =By.xpath("//p[text()='New watches 2025']");
     public static By watchMaking = By.xpath("//p[text()='Watchmaking']");
-    public static By rolexText = By.xpath("//h1[@class='rlx-hl50 rlx-title-mg txt-rlx-brown']");
+    public static By rolexText = By.cssSelector(".rlx-hl50.rlx-title-mg.txt-rlx-brown");
 }

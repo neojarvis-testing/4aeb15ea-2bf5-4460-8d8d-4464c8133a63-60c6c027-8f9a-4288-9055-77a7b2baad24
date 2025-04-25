@@ -22,25 +22,28 @@ public class SearchActions {
     ExtentTest test;
     LoggerHandler logs;
 
-    /*Author: Kotha Sai Ragunath
+    /*
+     * Author: Kotha Sai Ragunath
      * Method Name: SearchActions
-     * Description: This is a constructor that initializes the driver, helper, test and assertion objects.
+     * Description: This is a constructor that initializes the driver, helper, test
+     * and assertion objects.
      * Parameters: WebDriver driver, ExtentTest test
      * Return Type:NA
-    */
-    public SearchActions(WebDriver driver, ExtentTest test,LoggerHandler logs) {
+     */
+    public SearchActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test = test;
-        assertion = new Assertion(driver,logs);
-        this.logs=logs;
+        assertion = new Assertion(driver, test, logs);
+        this.logs = logs;
     }
-     /*Author: Kotha Sai Ragunath
+    /*
+     * Author: Kotha Sai Ragunath
      * Method Name: clickOnAccept
      * Description: This method is used to click On Accept and Cookies.
      * Parameters: WebDriver driver, ExtentTest test
      * Return Type:NA
-    */
+     */
 
     public void clickOnAccept() {
         try {
@@ -53,12 +56,11 @@ public class SearchActions {
             System.out.println(e.getMessage());
             logs.logError("Clicked On Accept and Cookies");
             test.log(Status.FAIL, "Clicked On Accept and Cookies");
-            Reporter.attachScreenshotToReport("Clicked cookies",test,"Accept and Cookies");
+            Reporter.attachScreenshotToReport("Clicked cookies", test, "Accept and Cookies");
         }
     }
 
-
-     /*
+    /*
      * Author: Kotha Sai Ragunath
      * Method Name: verifyWebsite
      * Description: Verifies if the page title matches "Mayors" and logs the
@@ -67,31 +69,28 @@ public class SearchActions {
      * Return Type: void
      */
 
-
-     public void verifyWebsite(){
+    public void verifyWebsite() {
         try {
             assertion.verifyTitleOfPage("Mayors");
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
             logs.logInfo("Verified the text Bracelets");
             test.log(Status.PASS, "Verified the text Bracelets");
-            
-        }catch (Exception e) {
+
+        } catch (Exception e) {
             logs.logError("Verified the page loaded with Bracelets");
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
-            Reporter.attachScreenshotToReport("verifyBracelets",test,"Verified the page loaded with Bracelets");
-            
+            Reporter.attachScreenshotToReport("verifyBracelets", test, "Verified the page loaded with Bracelets");
+
         }
     }
     /*
      * Author: Kotha Sai Ragunath
      * Method Name: searchOperation
      * Description: This method is for performing a search operation using the
-       search bar.
+     * search bar.
      * Parameters: None
      * Return Type: void
      */
-
-
 
     public void searchOperation(String value) {
         try {
@@ -101,11 +100,11 @@ public class SearchActions {
             test.log(Status.INFO, "Searched For Earings");
             logs.logInfo("Searched For Earings");
             test.log(Status.PASS, "Searched For Earings");
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Searched For Earings");
             test.log(Status.FAIL, "Searched For Earings");
-            Reporter.attachScreenshotToReport("EARRINGS",test,"Searched For Earings");
+            Reporter.attachScreenshotToReport("EARRINGS", test, "Searched For Earings");
         }
     }
     /*
@@ -126,12 +125,12 @@ public class SearchActions {
             e.printStackTrace();
             logs.logError("Verified the text Earings");
             test.log(Status.FAIL, "Verified the text Earings");
-            Reporter.attachScreenshotToReport("VERIFYEARRINGS",test,"Verified the text Earings");
+            Reporter.attachScreenshotToReport("VERIFYEARRINGS", test, "Verified the text Earings");
 
         }
 
     }
-        /*
+    /*
      * Author: Kotha Sai Ragunath
      * Method Name: clickOnDismiss
      * Description: This method is for clicking the "Dismiss" button.
@@ -150,8 +149,7 @@ public class SearchActions {
             System.out.println(e.getMessage());
             logs.logError("Clicked On Dismiss");
             test.log(Status.FAIL, "Clicked On Dismiss");
-            Reporter.attachScreenshotToReport("Dismiss",test,"Clicked On Dismiss");
-            
+            Reporter.attachScreenshotToReport("Dismiss", test, "Clicked On Dismiss");
 
         }
     }
@@ -171,11 +169,11 @@ public class SearchActions {
             logs.logInfo("Clicked On Brand");
             test.log(Status.PASS, "Clicked On Brand");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Clicked On Brand");
             test.log(Status.FAIL, "Clicked On Brand");
-            Reporter.attachScreenshotToReport("Brand",test,"Clicked On Brand");
+            Reporter.attachScreenshotToReport("Brand", test, "Clicked On Brand");
         }
     }
 
@@ -187,7 +185,6 @@ public class SearchActions {
      * Parameters: None
      * Return Type: void
      */
-
 
     public void clickOnGucci() {
         try {
@@ -201,7 +198,7 @@ public class SearchActions {
             System.out.println(e.getMessage());
             logs.logError("Clicked On Gucci");
             test.log(Status.FAIL, "Clicked On Gucci");
-            Reporter.attachScreenshotToReport("Gucci",test,"Failed to click On Gucci");
+            Reporter.attachScreenshotToReport("Gucci", test, "Failed to click On Gucci");
         }
     }
 
@@ -215,8 +212,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
-
     public void verifyGucci(String gucci) {
         try {
             assertion.verifyTextInPage(SearchLocators.verGucci, gucci);
@@ -227,14 +222,11 @@ public class SearchActions {
             e.printStackTrace();
             logs.logError("Verified the text Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
-            Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
+            Reporter.attachScreenshotToReport("VERIFYGUCCI", test, "Verified the text Gucci");
 
         }
 
     }
-
-
-    
 
     /*
      * Author: Kotha Sai Ragunath
@@ -245,23 +237,22 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnMetalType() {
         try {
             helper.javascriptScroll(SearchLocators.metalType);
             helper.hoverOverElement(SearchLocators.metalType);
             helper.clickOnElement(SearchLocators.metalType);
-           
+
             helper.clickOnElement(SearchLocators.roseGold);
             test.log(Status.INFO, "Clicked On RoseGold");
             logs.logInfo("Clicked On RoseGold");
             test.log(Status.PASS, "Clicked On RoseGold");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Clicked On RoseGold");
             test.log(Status.FAIL, "Clicked On RoseGold");
-            Reporter.attachScreenshotToReport("RoseGold",test,"Failed to click On RoseGold");
+            Reporter.attachScreenshotToReport("RoseGold", test, "Failed to click On RoseGold");
         }
     }
 
@@ -274,23 +265,22 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnEarRingsStyle() {
         try {
             helper.hoverOverElement(SearchLocators.earRingStyle);
             helper.clickOnElement(SearchLocators.earRingStyle);
-            
+
             helper.clickOnElement(SearchLocators.dropEarring);
             helper.clickOnElement(SearchLocators.dropEarring);
             test.log(Status.INFO, "Clicked On DropEarring");
             logs.logInfo("Clicked On DropEarring");
             test.log(Status.PASS, "Clicked On DropEarring");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Clicked On DropEarring");
             test.log(Status.FAIL, "Clicked On DropEarring");
-            Reporter.attachScreenshotToReport("Earring",test,"Failed to click On DropEarring");
+            Reporter.attachScreenshotToReport("Earring", test, "Failed to click On DropEarring");
         }
 
     }
@@ -304,8 +294,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
-
     public void verifyDropEarrings() {
         try {
             assertion.verifyTextInPage(SearchLocators.verDropEarrings, "DropEarrings");
@@ -316,7 +304,7 @@ public class SearchActions {
             e.printStackTrace();
             logs.logError("Verified the text Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
-            Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
+            Reporter.attachScreenshotToReport("VERIFYGUCCI", test, "Verified the text Gucci");
 
         }
 
@@ -330,19 +318,18 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnfirstProduct() {
         try {
             helper.clickOnElement(SearchLocators.firstProduct);
-           test.log(Status.INFO, "Clicked On FirstProduct");
+            test.log(Status.INFO, "Clicked On FirstProduct");
             logs.logInfo("Clicked On FirstProduct");
             test.log(Status.PASS, "Clicked On FirstProduct");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Clicked On FirstProduct");
             test.log(Status.FAIL, "Clicked On FirstProduct");
-            Reporter.attachScreenshotToReport("First_Product",test,"Failed to click On the Product");
+            Reporter.attachScreenshotToReport("First_Product", test, "Failed to click On the Product");
 
         }
     }
@@ -354,7 +341,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnGet() {
         try {
             helper.clickOnElement(SearchLocators.getLiveExpert);
@@ -365,7 +351,7 @@ public class SearchActions {
             System.out.println(e.getMessage());
             logs.logError("Clicked On getLiveExpert");
             test.log(Status.FAIL, "Clicked On getLiveExpert");
-            Reporter.attachScreenshotToReport("getLiveExpert",test,"Failed to click On getLiveExpert");
+            Reporter.attachScreenshotToReport("getLiveExpert", test, "Failed to click On getLiveExpert");
         }
 
     }
@@ -378,20 +364,18 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void getScreenshot() {
         try {
             Screenshot.takeScreenshot("Earrings");
             test.log(Status.INFO, "Captured Screenshot for Earrings");
             logs.logInfo("Captured Screenshot for Earrings");
             test.log(Status.PASS, "Captured Screenshot for Earrings");
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             logs.logError("Captured Screenshot for Earrings");
             test.log(Status.FAIL, "Captured Screenshot for Earrings");
-            Reporter.attachScreenshotToReport("EarringsScreenshot",test,"Failed to capture Earrings Screenshot");
+            Reporter.attachScreenshotToReport("EarringsScreenshot", test, "Failed to capture Earrings Screenshot");
         }
     }
 
-  
 }
