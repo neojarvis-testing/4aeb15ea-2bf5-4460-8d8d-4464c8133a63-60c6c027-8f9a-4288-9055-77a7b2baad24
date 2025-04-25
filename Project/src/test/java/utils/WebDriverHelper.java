@@ -158,9 +158,39 @@ public class WebDriverHelper {
      */
     public void enterAction(By locator) {
         try {
-
             WebElement webElement = driver.findElement(locator);
             webElement.sendKeys(Keys.ENTER);
+        } catch (Exception e) {
+
+        }
+    }
+    /*
+     * Method Name : javascriptScroll
+     * Author Name : Praneeth
+     * Description : This method is used to scroll to the element 
+     * Parameters : locator
+     * Return Type : void
+     */
+    public void javascriptScroll(By locator) {
+        try {
+            WebElement element = driver.findElement(locator);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView();", element);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }    
+    }
+    /*
+     * Method Name : alertMessage
+     * Author Name : Praneeth
+     * Description : This method is used to handle alerts
+     * Parameters : path
+     * Return Type : void
+     */
+    public void alertMessage(By path){
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
         } catch (Exception e) {
 
         }
