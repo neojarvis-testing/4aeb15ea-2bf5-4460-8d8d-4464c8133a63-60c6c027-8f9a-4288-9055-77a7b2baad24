@@ -27,7 +27,7 @@ public class ContactStepDefinition {
 
 
     LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.report.createTest("ContactUs");
     ContactPageActions contactActions  = new ContactPageActions( test, logs);
 
 

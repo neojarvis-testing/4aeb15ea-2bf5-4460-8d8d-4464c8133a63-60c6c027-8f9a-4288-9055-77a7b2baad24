@@ -19,7 +19,7 @@ public class RingsStepDefinition {
 
    
 LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.report.createTest("RingsPage");
     RingsPageActions contactActions  = new RingsPageActions( test, logs);
 
 @Given("I am on the Mayors website.")

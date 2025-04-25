@@ -108,7 +108,7 @@ public class ContactPageActions extends Base {
         logs.logError("Clicked Store");
         test.log(Status.FAIL, "Clicked Store");
         Screenshot.takeScreenshot("src5");
-        Reporter.attachScreenshotToReport("Brands", test, "src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
     }
 }
@@ -137,6 +137,8 @@ public void verifyLuxuryServices(String str3,String str4){
          helper.clickOnElement(ContactPageLocators.store);
          logs.logInfo("Clicked on Store");
         test.log(Status.PASS,"Clicked on Store");
+        Screenshot.takeScreenshot("src6");
+        Reporter.attachScreenshotToReport("src6", test, "src5");
 
        }
        catch(Exception e){
@@ -151,9 +153,13 @@ public void verifyStore(String str5,String str6){
     try{
         asserts.verifyTitleOfPage(str5);
         asserts.verifyURLOfPage(str6);
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
     }
     catch(Exception e){
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
     }
 }
@@ -172,6 +178,8 @@ public void verifyStore(String str5,String str6){
          helper.clickOnElement(ContactPageLocators.delivery);
          logs.logInfo("Clicked on Delivery");
         test.log(Status.PASS,"Clicked on Delivery");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
  
         }
         catch(Exception e){
@@ -179,6 +187,7 @@ public void verifyStore(String str5,String str6){
             test.log(Status.FAIL, "Clicked Delivery");
             Screenshot.takeScreenshot("src2");
             Reporter.attachScreenshotToReport("Brands", test, "src2");
+
            
 
         }
@@ -188,6 +197,7 @@ public void verifyStore(String str5,String str6){
         try{
             asserts.verifyTitleOfPage(str7);
             asserts.verifyURLOfPage(str8);
+  
     
         }
         catch(Exception e){
@@ -208,6 +218,8 @@ public void verifyStore(String str5,String str6){
          helper.clickOnElement(ContactPageLocators.click);
          logs.logInfo("Clicked on Click and collect");
         test.log(Status.PASS,"Clicked on Click and collect");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
        }
        catch(Exception e){
@@ -242,6 +254,8 @@ public void verifyClick(String str9,String str10){
          helper.clickOnElement(ContactPageLocators.retpolicy);
          logs.logInfo("Clicked on Return");
         test.log(Status.PASS,"Clicked on Return");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
      
        }
        catch(Exception e){
@@ -277,6 +291,8 @@ public void verifyReturn(String str11,String str12){
          helper.clickOnElement(ContactPageLocators.affrim);
          logs.logInfo("Clicked on Affrim");
         test.log(Status.PASS,"Clicked on Affrim");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
         
        }
        catch(Exception e){
@@ -311,6 +327,8 @@ public void verifyAffrim(String str13,String str14){
          helper.clickOnElement(ContactPageLocators.feedback);
          logs.logInfo("Clicked on Feedback");
         test.log(Status.PASS,"Clicked on Feedback");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
         
        }
        catch(Exception e){
@@ -330,6 +348,9 @@ public void verifyAffrim(String str13,String str14){
     
         }
         catch(Exception e){
+            test.log(Status.FAIL, "Verified failed");
+            Screenshot.takeScreenshot("src13");
+            Reporter.attachScreenshotToReport("Brands", test, "src13");
     
         }
     }
