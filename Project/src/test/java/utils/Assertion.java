@@ -12,8 +12,9 @@ public class Assertion {
 	private WebDriver driver;
 	ExtentTest test;
 	LoggerHandler logs;
-	public Assertion(WebDriver driver, LoggerHandler logs) {
+	public Assertion(WebDriver driver, ExtentTest test, LoggerHandler logs) {
 		this.driver = driver;
+		this.test = test;
 		this.logs = logs;
 	}
     /*

@@ -1,7 +1,6 @@
 package stepdefinitions;
 
 import com.aventstack.extentreports.ExtentReports;
-
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
@@ -16,10 +15,9 @@ public class Hooks extends Base{
     {
         report = Reporter.createReport("Mayors_Report");
     }
-
+ 
     @Before
-    public void openBrow()
-    {
+    public void launch(){
         openBrowser();
     }
 
@@ -33,9 +31,9 @@ public class Hooks extends Base{
     }
 
     @AfterAll
-    public static void flushReport()
-    {
+    public static void flush(){
         report.flush();
     }
-
+ 
 }
+
