@@ -24,7 +24,7 @@ public class WatchesPage extends Base{
     *Return Type:none
     */
     public WatchesPage(ExtentTest test, LoggerHandler logs){
-        helper=new WebDriverHelper(driver);
+        helper=new WebDriverHelper(driver, logs);
         this.test = test;
         asserts = new Assertion(driver,test,logs);
         this.logs=logs;
@@ -155,10 +155,7 @@ public class WatchesPage extends Base{
     */
     public void clickOnForHim(){
         try {
-            try {
-                clickOnClosePopUp();
-            } catch (Exception e) {
-            }
+            clickOnClosePopUp();
             helper.waitForElementToBeVisible(WatchesLocators.clickOnForHim,5);
             helper.clickOnElement(WatchesLocators.clickOnForHim);
             logs.logInfo("Clicked on For Him");
