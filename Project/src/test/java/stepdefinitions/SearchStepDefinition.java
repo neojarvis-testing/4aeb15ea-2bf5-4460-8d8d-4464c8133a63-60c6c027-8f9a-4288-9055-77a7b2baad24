@@ -10,7 +10,6 @@ import utils.Base;
 import utils.LoggerHandler;
 
 public class SearchStepDefinition {
-
     LoggerHandler logs = new LoggerHandler();
     ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
     SearchActions searchactions  = new SearchActions(Base.driver, test, logs);

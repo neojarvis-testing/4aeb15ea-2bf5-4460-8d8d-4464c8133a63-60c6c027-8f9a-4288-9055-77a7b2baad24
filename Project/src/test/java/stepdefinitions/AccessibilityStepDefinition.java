@@ -8,6 +8,14 @@ import io.cucumber.java.en.When;
 import pages.AccessibilityActions;
 import utils.LoggerHandler;
 
+
+/*
+     * Class Name : AccessibilityStepDefinition
+     * Author Name: Muskan Jha
+     * Description : This class is used to map descriptions in feature file and converts the each description to java commands
+     * Parameters : N/A
+     * Return Type : none
+     */
 public class AccessibilityStepDefinition {
 
     WebDriver driver = Hooks.driver;

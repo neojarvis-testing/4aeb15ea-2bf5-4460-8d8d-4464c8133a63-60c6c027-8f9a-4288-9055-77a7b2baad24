@@ -10,6 +10,14 @@ import io.cucumber.java.en.When;
 import pages.MensWatchActions;
 import utils.LoggerHandler;
 
+
+/*
+     * Class Name : MensWatchStepDefinition
+     * Author Name: Muskan Jha
+     * Description : This class is used to map descriptions in feature file and converts the each description to java commands
+     * Parameters : N/A
+     * Return Type : none
+     */
 public class MensWatchStepDefinition {
 
     WebDriver driver=Hooks.driver;
