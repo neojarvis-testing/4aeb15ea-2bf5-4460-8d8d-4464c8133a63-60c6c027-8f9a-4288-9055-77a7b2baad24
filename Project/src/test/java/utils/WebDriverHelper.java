@@ -2,10 +2,6 @@ package utils;
 import java.util.Set;
 import java.time.Duration;
 
-
-import java.util.Set;
-import java.time.Duration;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
