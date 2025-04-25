@@ -22,26 +22,28 @@ public class SearchActions {
     ExtentTest test;
     LoggerHandler logs;
 
-    /*Author: Kotha Sai Ragunath
+    /*
+     * Author: Kotha Sai Ragunath
      * Method Name: SearchActions
-     * Description: This is a constructor that initializes the driver, helper, test and assertion objects.
+     * Description: This is a constructor that initializes the driver, helper, test
+     * and assertion objects.
      * Parameters: WebDriver driver, ExtentTest test
      * Return Type:NA
-    */
-    public SearchActions(WebDriver driver, ExtentTest test,LoggerHandler logs) {
+     */
+    public SearchActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
         helper = new WebDriverHelper(driver, logs);
         this.test = test;
-        this.logs=logs;
-        assertion = new Assertion(driver,test,logs);
-        
+        assertion = new Assertion(driver, test, logs);
+        this.logs = logs;
     }
-     /*Author: Kotha Sai Ragunath
+    /*
+     * Author: Kotha Sai Ragunath
      * Method Name: clickOnAccept
      * Description: This method is used to click On Accept and Cookies.
      * Parameters: WebDriver driver, ExtentTest test
      * Return Type:NA
-    */
+     */
 
     public void clickOnAccept() {
         try {
@@ -59,8 +61,7 @@ public class SearchActions {
         }
     }
 
-
-     /*
+    /*
      * Author: Kotha Sai Ragunath
      * Method Name: verifyWebsite
      * Description: Verifies if the page title matches "Mayors" and logs the
@@ -69,8 +70,7 @@ public class SearchActions {
      * Return Type: void
      */
 
-
-     public void verifyWebsite(){
+    public void verifyWebsite() {
         try {
             assertion.verifyTitleOfPage("Mayors");
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
@@ -83,19 +83,16 @@ public class SearchActions {
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
             Screenshot.takeScreenshot("verifyBracelets");
             Reporter.attachScreenshotToReport("verifyBracelets",test,"Verified the page loaded with Bracelets");
-            
         }
     }
     /*
      * Author: Kotha Sai Ragunath
      * Method Name: searchOperation
      * Description: This method is for performing a search operation using the
-       search bar.
+     * search bar.
      * Parameters: None
      * Return Type: void
      */
-
-
 
     public void searchOperation(String value) {
         try {
@@ -138,7 +135,7 @@ public class SearchActions {
         }
 
     }
-        /*
+    /*
      * Author: Kotha Sai Ragunath
      * Method Name: clickOnDismiss
      * Description: This method is for clicking the "Dismiss" button.
@@ -158,7 +155,6 @@ public class SearchActions {
             test.log(Status.FAIL, "Clicked On Dismiss");
             Screenshot.takeScreenshot("Dismiss");
             Reporter.attachScreenshotToReport("Dismiss",test,"Clicked On Dismiss");
-            
 
         }
     }
@@ -177,7 +173,6 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On Brand");
             logs.logInfo("Clicked On Brand");
             test.log(Status.PASS, "Clicked On Brand");
-
         }catch (Exception e) {
             test.log(Status.INFO, "Clicked On Brand");
             logs.logError("Clicked On Brand");
@@ -195,7 +190,6 @@ public class SearchActions {
      * Parameters: None
      * Return Type: void
      */
-
 
     public void clickOnGucci() {
         try {
@@ -224,8 +218,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
-
     public void verifyGucci(String gucci) {
         try {
             assertion.verifyTextInPage(SearchLocators.verGucci, gucci);
@@ -244,9 +236,6 @@ public class SearchActions {
 
     }
 
-
-    
-
     /*
      * Author: Kotha Sai Ragunath
      * Method Name: clickOnMetalType
@@ -255,7 +244,6 @@ public class SearchActions {
      * Parameters: None
      * Return Type: void
      */
-
 
     public void clickOnMetalType() {
         try {
@@ -285,7 +273,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnEarRingsStyle() {
         try {
             helper.hoverOverElement(SearchLocators.earRingStyle);
@@ -295,7 +282,6 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On DropEarring");
             logs.logInfo("Clicked On DropEarring");
             test.log(Status.PASS, "Clicked On DropEarring");
-
         }catch (Exception e) {
             test.log(Status.INFO, "Clicked On DropEarring");
             logs.logError("Clicked On DropEarring");
@@ -314,8 +300,6 @@ public class SearchActions {
      * Parameters: None
      * Return Type: void
      */
-
-
 
     public void verifyDropEarrings() {
         try {
@@ -342,14 +326,12 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void clickOnfirstProduct() {
         try {
             helper.clickOnElement(SearchLocators.firstProduct);
-           test.log(Status.INFO, "Clicked On FirstProduct");
+            test.log(Status.INFO, "Clicked On FirstProduct");
             logs.logInfo("Clicked On FirstProduct");
             test.log(Status.PASS, "Clicked On FirstProduct");
-
         }catch (Exception e) {
             logs.logError("Clicked On FirstProduct");
             test.log(Status.INFO, "Clicked On FirstProduct");
@@ -366,7 +348,6 @@ public class SearchActions {
      * Parameters: None
      * Return Type: void
      */
-
 
     public void clickOnGet() {
         try {
@@ -393,7 +374,6 @@ public class SearchActions {
      * Return Type: void
      */
 
-
     public void getScreenshot() {
         try {
             Screenshot.takeScreenshot("Earrings");
@@ -409,5 +389,4 @@ public class SearchActions {
         }
     }
 
-  
 }

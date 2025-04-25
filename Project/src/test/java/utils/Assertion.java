@@ -35,6 +35,8 @@ public class Assertion {
 		} catch (AssertionError e) {
 			logs.logError("Text Invalid");
 			test.log(Status.FAIL, "Text Invalid");
+			Screenshot.takeScreenshot("Text");
+            Reporter.attachScreenshotToReport("Text", test, "Invalid Text");
 		}
 	}
     /*
@@ -54,6 +56,8 @@ public class Assertion {
 		} catch (AssertionError e) {
 			logs.logError(value + " incorrect");
 			test.log(Status.FAIL, value + "incorrect");
+			Screenshot.takeScreenshot("URL");
+            Reporter.attachScreenshotToReport("URL", test, "URL incorrect");
 		}
 
 	}
@@ -74,6 +78,8 @@ public class Assertion {
 		} catch (AssertionError e) {
 			logs.logError("Title of page is invalid");
 			test.log(Status.FAIL, "Title of page is invalid");
+			Screenshot.takeScreenshot("Title");
+            Reporter.attachScreenshotToReport("Title", test, "Title Invalid");
 		}
 
 	}

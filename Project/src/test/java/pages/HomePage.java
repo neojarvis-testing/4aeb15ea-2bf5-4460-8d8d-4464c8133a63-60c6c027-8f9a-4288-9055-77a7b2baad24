@@ -16,6 +16,13 @@ public class HomePage extends Base{
     ExtentTest test;
     Assertion asserts;
     LoggerHandler logs;
+    /*
+     * Constructor name: HomePage
+     * Author: Praneeth Kumar
+     * Description: this contrustor creates a reference for WebDriverHelper variable, Assertion variable and initializes ExtentTest variable
+     * Return type: none
+     * Parameters: ExtentTest instance
+     */
     public HomePage(ExtentTest test,LoggerHandler logs){
         helper = new WebDriverHelper(Base.driver,logs);
         this.test = test;
@@ -91,7 +98,7 @@ public class HomePage extends Base{
     /*
      * Method Name : verifyDeepSea
      * Author Name : Praneeth
-     * Description : This method verify the title of the page
+     * Description : This method verify the title of the deepsea page
      * Parameters : N/A
      * Return Type : void
      */
@@ -130,7 +137,7 @@ public class HomePage extends Base{
     /*
      * Method Name : verifyRolexWatch
      * Author Name : Praneeth
-     * Description : This method used to verify the tilte of page
+     * Description : This method used to verify the tilte of rolex watch page
      * Parameters : N/A
      * Return Type : void
      */
@@ -167,7 +174,13 @@ public class HomePage extends Base{
             Reporter.attachScreenshotToReport("Brands", test, "Discover watches");
         }
     }
-
+    /*
+     * Method Name : verifyDiscover
+     * Author Name : Praneeth
+     * Description : This method verify the title of Discover page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void veirfyDiscover(String value){
         try {
             asserts.verifyTitleOfPage(value);
@@ -177,6 +190,13 @@ public class HomePage extends Base{
             Reporter.attachScreenshotToReport("Brands", test, "Discover watches");
         }
     }
+    /*
+     * Method Name : clickNewWatches
+     * Author Name : Praneeth
+     * Description : This method is used to click on new watches
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void clickNewWatches(){
         try {
             helper.clickOnElement(HomePageLocators.newWatches);
@@ -190,7 +210,13 @@ public class HomePage extends Base{
             Reporter.attachScreenshotToReport("Brands", test, "makingWatches");
         }
     }
-
+    /*
+     * Method Name : verifyNewWatches
+     * Author Name : Praneeth
+     * Description : This method verify the title of the new watch page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void verifyNewWatches(String value){
         try {
             asserts.verifyTitleOfPage(value);
@@ -218,6 +244,13 @@ public class HomePage extends Base{
             Reporter.attachScreenshotToReport("Brands", test, "makingWatches");
         }
     }
+    /*
+     * Method Name : verifyWatchMaking
+     * Author Name : Praneeth
+     * Description : This method verify the title of the watch making page
+     * Parameters : N/A
+     * Return Type : void
+     */
     public void veirfyWatchMaking(String value){
         try {
             asserts.verifyTitleOfPage(value);

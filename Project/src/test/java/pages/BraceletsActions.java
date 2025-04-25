@@ -136,8 +136,8 @@ public class BraceletsActions {
             test.log(Status.INFO, "Clicked On Bracelets");
             test.log(Status.FAIL, "Clicked On Bracelets");
             Screenshot.takeScreenshot("Bracelets");
-            Reporter.attachScreenshotToReport("Clicked On Bracelets", test, "Clicked Bracelets");
-        }
+          Reporter.attachScreenshotToReport("Clicked On Bracelets", test, "Clicked Bracelets");
+        } 
     }
     /*
      * Author: Kotha Sai Ragunath
@@ -302,7 +302,9 @@ public class BraceletsActions {
      * Author: Kotha Sai Ragunath
      * Method Name: clickOnBraceletInStyle
      * Description: This method executes actions to click on elements related to
-     * "Bracelet Styles" under the Bracelets module.
+     * "Bracelet Styles" under the Bracelets module. It includes robust logging for
+     * successful and failed executions while providing detailed error management
+     * and capturing screenshots for traceability.
      * Parameters: None
      * Return Type: void
      */
