@@ -11,15 +11,17 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 import utils.Assertion;
 
-public class RingsPageActions extends Base{
+public class RingsPageActions extends Base {
     WebDriverHelper helper;
     Assertion asserts;
     ExtentTest test;
     LoggerHandler logs;
+
     /*
      * Constructor Name : RingsPageActions
      * Author Name : Krishna Reddy
-     * Description : This constructor creates the instances of the WebDriverHelper and Assertion.
+     * Description : This constructor creates the instances of the WebDriverHelper
+     * and Assertion.
      * Parameters : N/A
      * Return Type : void
      */
@@ -29,6 +31,7 @@ public class RingsPageActions extends Base{
         asserts = new Assertion(driver,test,logs);
         this.logs=logs;
     }
+
     /*
     * Method Name : clickOnSearch
     * Author Name : Krishna Reddy
@@ -45,16 +48,14 @@ public class RingsPageActions extends Base{
         test.log(Status.PASS,"Clicked on searchbar");
         Screenshot.takeScreenshot("src14");
         Reporter.attachScreenshotToReport("src14", test, "src5");
-        }
-        catch(Exception e){
-            logs.logInfo("Clicked on search");
+        } catch (Exception e) {
             logs.logError("Clicked on search");
             test.log(Status.FAIL, "Clicked on search");
             Screenshot.takeScreenshot("src14");
-            Reporter.attachScreenshotToReport("src14", test, "src14");
-    
+            Reporter.attachScreenshotToReport("Brands", test, "src14");
         }
     }
+
     /*
     * Method Name : inputOnSearchBar
     * Author Name : Krishna Reddy
@@ -79,7 +80,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on searchbar");
             Screenshot.takeScreenshot("src15");
             Reporter.attachScreenshotToReport("Brands", test, "src15");
-    
+
         }
     }
    /*
@@ -103,7 +104,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Entered on search");
             Screenshot.takeScreenshot("src16");
             Reporter.attachScreenshotToReport("Brands", test, "src16");
-    
+
         }
     }
    /*
@@ -128,7 +129,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on brand");
             Screenshot.takeScreenshot("src17");
             Reporter.attachScreenshotToReport("Brands", test, "src17");
-    
+
         }
     }
    /*
@@ -153,7 +154,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on carlex");
             Screenshot.takeScreenshot("src18");
             Reporter.attachScreenshotToReport("Brands", test, "src18");
-    
+
         }
     }
      /*
@@ -178,9 +179,10 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on Rings");
             Screenshot.takeScreenshot("src19");
             Reporter.attachScreenshotToReport("Brands", test, "src19");
-    
+
         }
     }
+
     /*
     * Method Name : clickOnForher
     * Author Name : Krishna Reddy
@@ -203,9 +205,10 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on forher");
             Screenshot.takeScreenshot("src20");
             Reporter.attachScreenshotToReport("Brands", test, "src20");
-    
+
         }
     }
+
     /*
     * Method Name : clickOnFirst
     * Author Name : Krishna Reddy
@@ -223,12 +226,12 @@ public class RingsPageActions extends Base{
         Reporter.attachScreenshotToReport("src5", test, "src5");
         }
         catch(Exception e){
-            logs.logInfo("Clicked on first");
+            logs.logInfo("Clicked on first"); 
             logs.logError("Clicked on first");
             test.log(Status.FAIL, "Clicked on first");
             Screenshot.takeScreenshot("src21");
             Reporter.attachScreenshotToReport("Brands", test, "src21");
-    
+
         }
     }
       /*
@@ -253,7 +256,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on live");
             Screenshot.takeScreenshot("src22");
             Reporter.attachScreenshotToReport("Brands", test, "src22");
-    
+
         }
     }
      /*
@@ -277,7 +280,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on accept cookies");
             Screenshot.takeScreenshot("src23");
             Reporter.attachScreenshotToReport("Brands", test, "src23");
-    
+
         }
     }
      /*
@@ -303,7 +306,7 @@ public class RingsPageActions extends Base{
             test.log(Status.FAIL, "Clicked on close");
             Screenshot.takeScreenshot("src24");
             Reporter.attachScreenshotToReport("Brands", test, "src24");
-    
+
         }
     }
      /*
@@ -325,32 +328,7 @@ public class RingsPageActions extends Base{
             Reporter.attachScreenshotToReport("Brands", test, "src25");
             
         }
-        
+
     }
-     /*
-    * Method Name : ringsExecute
-    * Author Name : Krishna Reddy
-    * Description : This method clusters the methods which needs to be executed.
-    * Parameters : N/A
-    * Return Type : void
-    */
-    // public void ringsExecute(){
-    //     clickOnAccept();
-    //     clickOnSearch();
-        
-    //     enterOnSearchbar();
-    //     clickOnClose();
-    //     clickOnRings();
-    //     clickOnForher();
-    //     clickOnForher();
-    //     clickOnBrand();
-    //     clickOnCarlex();
-    //     clickOnFirst();
-    //     clickOnLive();
-    //     verifyRings();
-    // }
-    
-    
-    
 
 }

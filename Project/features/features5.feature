@@ -15,4 +15,4 @@ And I click on Add to Shopping Bag
 Then I capture the screenshot
 Examples:
 |verify1 |verify2 |verify3 |verify4 |
-|jewelry |Yellow Gold |Diamond |Bracelets |
+|Jewelry |Yellow |Diamond |Bracelets |
