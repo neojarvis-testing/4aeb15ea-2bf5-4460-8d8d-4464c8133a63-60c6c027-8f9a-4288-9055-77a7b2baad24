@@ -23,9 +23,9 @@ public class AboutMayors extends Base{
      */
     public AboutMayors(ExtentTest test,LoggerHandler logs)
     {
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test=test;
-        assertt = new Assertion(driver,logs);
+        assertt = new Assertion(driver,test, logs);
         this.logs = logs;
     }
 

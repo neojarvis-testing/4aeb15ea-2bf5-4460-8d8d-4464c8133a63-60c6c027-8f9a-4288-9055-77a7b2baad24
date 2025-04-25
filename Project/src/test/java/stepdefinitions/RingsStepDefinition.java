@@ -5,21 +5,12 @@ import com.aventstack.extentreports.ExtentTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.ContactPageActions;
 import pages.RingsPageActions;
-import utils.Base;
 import utils.LoggerHandler;
 
 public class RingsStepDefinition {
-    
-    
-    
-  
-    
-
-   
 LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
     RingsPageActions contactActions  = new RingsPageActions( test, logs);
 
 @Given("I am on the Mayors website.")

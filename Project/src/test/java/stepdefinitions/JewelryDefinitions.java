@@ -9,7 +9,7 @@ import pages.JewelryPage;
 import utils.LoggerHandler;
 public class JewelryDefinitions{
     LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("Test case 4");
+    ExtentTest test = Hooks.reports.createTest("Test case 4");
     JewelryPage je  = new JewelryPage(test, logs);
     @Given("I am on home page {string}")
 public void i_am_on_home_page(String string) {

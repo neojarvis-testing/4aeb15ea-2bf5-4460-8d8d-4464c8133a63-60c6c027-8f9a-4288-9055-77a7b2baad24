@@ -8,7 +8,7 @@ public class WatchesLocators {
     public static By clickOnBestSellers=By.xpath("//span[text()='Best Sellers']");
     public static By clickOnCross=By.xpath("//div[@class='dismiss-popup']");
     public static By clickOnForHim =By.xpath("(//li[@class=' facetAction  '])[6]");
-    public static By verifyPageContent=By.xpath("(//div[@class='appliedFilter'])[1]");
+    public static By verifyPageContent=By.xpath("//li[text()='Best Sellers']");
     public static By clickOnCartier=By.xpath("//div[text()='Cartier ']");
     public static By verifyCartierPageContent=By.xpath("(//div[@class='appliedFilter'])[2]");
     public static By clickOnDialColor=By.xpath("//div[text()='Dial Color']");

@@ -24,7 +24,7 @@ public class WatchesPage extends Base{
     *Return Type:none
     */
     public WatchesPage(ExtentTest test, LoggerHandler logs){
-        helper=new WebDriverHelper(driver);
+        helper=new WebDriverHelper(driver, logs);
         this.test = test;
         asserts = new Assertion(driver,test,logs);
         this.logs=logs;
@@ -43,6 +43,8 @@ public class WatchesPage extends Base{
             helper.clickOnElement(WatchesLocators.acceptOnCookies);
             test.log(Status.INFO,"Clicked on cookies");
             test.log(Status.PASS, "Clicked on cookies");
+            Screenshot.takeScreenshot("Cookies");
+            Reporter.attachScreenshotToReport("Cookies", test, "Cookies");
         } catch (Exception e) {
             logs.logError("Unable to click on the Cookies");
             test.log(Status.INFO,"Unable to click on the Cookies");
@@ -138,6 +140,8 @@ public class WatchesPage extends Base{
             logs.logInfo("Clicked on close pop up");
             test.log(Status.INFO,"Clicked on close pop up");
             test.log(Status.PASS, "Clicked on close pop up");
+            Screenshot.takeScreenshot("Close pop up");
+            Reporter.attachScreenshotToReport("Close pop up", test, "Close pop up");
         } catch (Exception e) {
             logs.logError("Unable to click on close pop up");
             test.log(Status.INFO,"Unable to click on close pop up");
@@ -155,10 +159,6 @@ public class WatchesPage extends Base{
     */
     public void clickOnForHim(){
         try {
-            try {
-                clickOnClosePopUp();
-            } catch (Exception e) {
-            }
             helper.waitForElementToBeVisible(WatchesLocators.clickOnForHim,5);
             helper.clickOnElement(WatchesLocators.clickOnForHim);
             logs.logInfo("Clicked on For Him");
@@ -173,9 +173,27 @@ public class WatchesPage extends Base{
         }
     }
 
+    /*Method name:verifyPageContent 
+    *Author:Sumayya Sultana
+    *Description:This method is used to verify loaded page with relevent content
+    *Parameters: N/A
+    *Return Type:void
+    */
+
     public void verifyPageContent(String value){
-        
+        try{
         asserts.verifyTextInPage(WatchesLocators.verifyPageContent,value);
+        logs.logInfo("Page content verified");
+        test.log(Status.INFO,"Page content verified");
+        test.log(Status.PASS, "Page content verified");
+    }
+    catch(Exception e){
+        logs.logError("Unable to verify Page content");
+        test.log(Status.INFO,"Unable to verify Page content");
+        test.log(Status.FAIL, "Unable to verify Page content");
+        Screenshot.takeScreenshot("Page Content");
+        Reporter.attachScreenshotToReport("Page Content", test, "Page Content");
+    }
     }
 
     /*Method name:clickOnCartier 
@@ -192,19 +210,38 @@ public class WatchesPage extends Base{
             logs.logInfo("Clicked on Cartier");
             test.log(Status.INFO,"Clicked on Cartier");
             test.log(Status.PASS, "Clicked on Cartier");
+            Screenshot.takeScreenshot("");
+            Reporter.attachScreenshotToReport("Clicked on Cartier", test, "Clicked on Cartier");
         } catch (Exception e) {
             logs.logError("Unable to click on Cartier");
             test.log(Status.INFO,"Unable to click on Cartier");
             test.log(Status.FAIL, "Unable to click on Cartier");
-            Screenshot.takeScreenshot("Cartier");
-            Reporter.attachScreenshotToReport("Cartier", test, "Cartier");
+            Screenshot.takeScreenshot(" Click on Cartier");
+            Reporter.attachScreenshotToReport("Click on Cartier", test, "Click on Cartier");
         }
     }
 
-    public void verifyCartierPageContent(String value){
+    /*Method name:verifyCartierPageContent 
+    *Author:Sumayya Sultana
+    *Description:This method is used to verify loaded page with relevent content
+    *Parameters: N/A
+    *Return Type:void
+    */
 
-            asserts.verifyTextInPage(WatchesLocators.verifyCartierPageContent,value);
-        
+    public void verifyCartierPageContent(String value){
+        try{
+            asserts.verifyTextInPage(WatchesLocators.verifyPageContent,value);
+            logs.logInfo("Page content verified");
+            test.log(Status.INFO,"Page content verified");
+            test.log(Status.PASS, "Page content verified");
+        }
+        catch(Exception e){
+            logs.logError("Unable to verify Page content");
+            test.log(Status.INFO,"Unable to verify Page content");
+            test.log(Status.FAIL, "Unable to verify Page content");
+            Screenshot.takeScreenshot("Page Content");
+            Reporter.attachScreenshotToReport("Page Content", test, "Page Content");
+        }
     }
 
     /*Method name:clickOnDialColor
@@ -247,18 +284,39 @@ public class WatchesPage extends Base{
             logs.logInfo("Clicked on Black");
             test.log(Status.INFO,"Clicked on Black");
             test.log(Status.PASS, "Clicked on Black");
+            Screenshot.takeScreenshot("Clicked on Black");
+            Reporter.attachScreenshotToReport("Clicked on Black", test, "Clicked on Black");
         } catch (Exception e) {
             logs.logError("Unable to click on Black");
             test.log(Status.INFO,"Unable to click on Black");
             test.log(Status.FAIL, "Unable to click on Black");
-            Screenshot.takeScreenshot("Black");
-            Reporter.attachScreenshotToReport("Black", test, "Black");
+            Screenshot.takeScreenshot("click on Black");
+            Reporter.attachScreenshotToReport("click on Black", test, "click on Black");
 
         }
     }
-
+    /*Method name:verifyPageLoadContent 
+    *Author:Sumayya Sultana
+    *Description:This method is used to verify loaded page with relevent content
+    *Parameters: N/A
+    *Return Type:void
+    */
+    
     public void verifyPageLoadContent(String value){
+        try{
         asserts.verifyTextInPage(WatchesLocators.verifyPageLoadContent,value);
+        logs.logError("Page content is verified");
+        test.log(Status.INFO,"Page content is verified");
+        test.log(Status.FAIL, "Page content is verified");
+        }
+        catch (Exception e) {
+            logs.logError("Unable to verify Page content");
+            test.log(Status.INFO,"Unable to verify Page content");
+            test.log(Status.FAIL, "Unable to verify Page content");
+            Screenshot.takeScreenshot("Page Content");
+            Reporter.attachScreenshotToReport("Page Content", test, "Page Content");
+
+        }
     }
 
     /*Method name:clickOnFirstProduct
@@ -300,6 +358,8 @@ public class WatchesPage extends Base{
             logs.logInfo("Clicked on add to cart");
             test.log(Status.INFO,"Clicked on add to cart");
             test.log(Status.PASS, "Clicked on add to cart");
+            Screenshot.takeScreenshot("Add to cart");
+            Reporter.attachScreenshotToReport("Add to cart", test, "Add to cart");
         } catch (Exception e) {
             logs.logError("Unable to click on add to cart");
             test.log(Status.INFO,"Unable to click on add to cart");

@@ -12,7 +12,7 @@ import utils.LoggerHandler;
 public class SearchStepDefinition {
 
     LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
     SearchActions searchactions  = new SearchActions(Base.driver, test, logs);
 
     @Given("I am on the website")

@@ -23,9 +23,9 @@ public class JewelryPage extends Base{
 
     public JewelryPage(ExtentTest test,LoggerHandler logs)
     {
-        helper = new WebDriverHelper(Base.driver);
+        helper = new WebDriverHelper(Base.driver, logs);
         this.test=test;
-        asserts = new Assertion(Base.driver,logs);
+        asserts = new Assertion(Base.driver,test, logs);
         this.logs = logs;
     }
 

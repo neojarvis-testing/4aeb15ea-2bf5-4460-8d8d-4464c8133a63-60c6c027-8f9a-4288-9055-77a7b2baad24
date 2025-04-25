@@ -15,7 +15,6 @@ Feature: Testing Mayors
         And I click on First product
         Then I click on Add to Bag
 Examples:
-  | Best-Sellers  | ForHim       | Cartier  | Black       |
-  | Watches       | Best-Sellers  | Watches  | Dmayors_us  |
+| Best-Sellers  | ForHim       | Cartier  | Black       || Watches       | Best-Sellers  | Watches  | Dmayors_us  |
 
     

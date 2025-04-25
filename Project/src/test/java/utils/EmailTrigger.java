@@ -5,6 +5,7 @@ import jakarta.mail.internet.*;
 import java.io.File;
 import java.util.Properties;
 public class EmailTrigger {
+    
    public void sendEmail(String toEmail, String subject, String messageText, String attachmentPath) {
        final String fromEmail = "ragunathsai22@gmail.com"; // change to your email
        final String password = "caxn mrip awzp xczs"; // use App Password if 2FA is on
