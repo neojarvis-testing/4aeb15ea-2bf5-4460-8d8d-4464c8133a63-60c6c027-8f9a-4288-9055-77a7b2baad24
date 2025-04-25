@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
@@ -44,9 +43,7 @@ public class Hooks extends Base {
     public static void flushReport(){
         reports.flush();
     }
-
-
-
-    
+   
 
 }
+
