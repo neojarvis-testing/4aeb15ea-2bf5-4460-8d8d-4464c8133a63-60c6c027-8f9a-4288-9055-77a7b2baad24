@@ -1,9 +1,6 @@
 package stepdefinitions;
 
-
- 
 import com.aventstack.extentreports.ExtentReports;
- 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
@@ -32,3 +29,4 @@ public class Hooks extends Base{
         reports.flush();
     }
 }
+

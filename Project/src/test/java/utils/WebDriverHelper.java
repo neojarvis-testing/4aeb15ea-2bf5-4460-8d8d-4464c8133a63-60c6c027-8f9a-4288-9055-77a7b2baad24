@@ -1,4 +1,18 @@
 package utils;
+import java.util.Set;
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.Set;
 import java.time.Duration;
@@ -161,7 +175,6 @@ public class WebDriverHelper {
      */
     public void enterAction(By locator) {
         try {
-
             WebElement webElement = driver.findElement(locator);
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
@@ -196,8 +209,8 @@ public class WebDriverHelper {
             Alert alert = driver.switchTo().alert();
             alert.accept();
         } catch (Exception e) {
-            logs.logError("Handled alert message");
-        }    
+          logs.logError("Clicked on alert")
+        }
     }
     /*
      * Method Name : excelReading
