@@ -31,7 +31,7 @@ public class WebDriverHelper {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
     /*
@@ -46,7 +46,7 @@ public class WebDriverHelper {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
                 .until(ExpectedConditions.elementToBeClickable(locator));
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
     /*
@@ -61,7 +61,7 @@ public class WebDriverHelper {
         WebElement elem = driver.findElement(locator);
         elem.click();
         }catch(Exception e){
-            System.out.println(e.getMessage());
+
         }
      }
     /*
@@ -76,7 +76,7 @@ public class WebDriverHelper {
             WebElement elem = driver.findElement(locator);
         elem.sendKeys(text);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
         
     }
@@ -93,7 +93,7 @@ public class WebDriverHelper {
         Select select = new Select(element);
         select.selectByVisibleText(value);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
         
     }
@@ -110,7 +110,7 @@ public class WebDriverHelper {
           Actions actions = new Actions(driver);
           actions.moveToElement(webElement).perform();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
     /*
@@ -125,7 +125,7 @@ public class WebDriverHelper {
            WebElement webElement = driver.findElement(locator);
           webElement.sendKeys(data);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
           
     }
@@ -146,7 +146,7 @@ public class WebDriverHelper {
             }
         }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
     /*
@@ -162,7 +162,7 @@ public class WebDriverHelper {
             WebElement webElement = driver.findElement(locator);
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }
     }
     /*
@@ -178,7 +178,7 @@ public class WebDriverHelper {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView();", element);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }    
     }
     /*
@@ -193,7 +193,7 @@ public class WebDriverHelper {
             Alert alert = driver.switchTo().alert();
             alert.accept();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
         }    
     }
     /*

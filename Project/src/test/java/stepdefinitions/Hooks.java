@@ -18,7 +18,7 @@ public class Hooks extends Base {
     }
 
     @Before
-    public void open(){
+    public void launch(){
         openBrowser();
     }
 
@@ -31,5 +31,4 @@ public class Hooks extends Base {
         reports.flush();
     }
 }
-
 
