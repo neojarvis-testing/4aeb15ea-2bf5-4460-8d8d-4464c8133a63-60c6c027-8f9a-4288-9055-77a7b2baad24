@@ -10,7 +10,7 @@ import utils.LoggerHandler;
 
 public class AboutUsDefinitions {
     LoggerHandler log = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("Test Case 10");
+    ExtentTest test = Hooks.reports.createTest("Test Case 10");
     AboutMayors abtm =  new AboutMayors(test, log);
 
     @When("I click on About Mayors in footer section")

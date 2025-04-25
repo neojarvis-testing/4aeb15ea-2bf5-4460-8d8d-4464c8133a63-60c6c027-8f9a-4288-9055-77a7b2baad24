@@ -32,9 +32,9 @@ public class BraceletsActions {
 
     public BraceletsActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test = test;
-        assertion = new Assertion(driver, logs);
+        assertion = new Assertion(driver, test, logs);
         this.logs = logs;
     }
     /*
