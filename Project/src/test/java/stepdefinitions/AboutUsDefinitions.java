@@ -9,9 +9,9 @@ import pages.AboutMayors;
 import utils.LoggerHandler;
 
 public class AboutUsDefinitions {
-  LoggerHandler log = new LoggerHandler();
-  ExtentTest test = Hooks.reports.createTest("Test Case 10");
-  AboutMayors abtm = new AboutMayors(test, log);
+    LoggerHandler log = new LoggerHandler();
+    ExtentTest test = Hooks.reports.createTest("Test Case 10");
+    AboutMayors abtm =  new AboutMayors(test, log);
 
   @When("I click on About Mayors in footer section")
   public void i_click_on_about_mayors_in_footer_section() {

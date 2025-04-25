@@ -13,7 +13,8 @@ import utils.LoggerHandler;
 public class ContactStepDefinition {
     LoggerHandler logs = new LoggerHandler();
     ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
-    ContactPageActions contactActions = new ContactPageActions(test, logs);
+    ContactPageActions contactActions  = new ContactPageActions( test, logs);
+
 
     @Given("I am on the homepage.")
     public void i_am_on_the_homepage() {

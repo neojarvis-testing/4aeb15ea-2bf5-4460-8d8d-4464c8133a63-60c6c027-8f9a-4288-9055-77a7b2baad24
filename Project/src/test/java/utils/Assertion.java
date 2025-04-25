@@ -16,6 +16,7 @@ public class Assertion {
 		this.driver = driver;
 		this.test = test;
 		this.logs = logs;
+		this.test = test;
 	}
     /*
      * Method Name : verifyTextInPage

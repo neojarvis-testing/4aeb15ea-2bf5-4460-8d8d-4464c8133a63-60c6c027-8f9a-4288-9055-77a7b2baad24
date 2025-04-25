@@ -11,9 +11,9 @@ import utils.Base;
 import utils.LoggerHandler;
 
 public class RingsStepDefinition {
-    LoggerHandler logs = new LoggerHandler();
+LoggerHandler logs = new LoggerHandler();
     ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
-    RingsPageActions contactActions = new RingsPageActions(test, logs);
+    RingsPageActions contactActions  = new RingsPageActions( test, logs);
 
     @Given("I am on the Mayors website.")
     public void i_am_on_the_mayors_website() {

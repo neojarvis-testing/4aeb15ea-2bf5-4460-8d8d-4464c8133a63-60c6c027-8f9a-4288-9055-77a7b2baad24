@@ -13,7 +13,7 @@ public class SearchStepDefinition {
 
     LoggerHandler logs = new LoggerHandler();
     ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
-    SearchActions searchactions = new SearchActions(Base.driver, test, logs);
+    SearchActions searchactions  = new SearchActions(Base.driver, test, logs);
 
     @Given("I am on the website")
     public void i_am_on_the_website() {

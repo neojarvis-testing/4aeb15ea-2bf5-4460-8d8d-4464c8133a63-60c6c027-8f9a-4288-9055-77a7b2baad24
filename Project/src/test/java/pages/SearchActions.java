@@ -53,10 +53,11 @@ public class SearchActions {
             test.log(Status.PASS, "Clicked On Accept and Cookies");
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             logs.logError("Clicked On Accept and Cookies");
+            test.log(Status.INFO, "Clicked On Accept and Cookies");
             test.log(Status.FAIL, "Clicked On Accept and Cookies");
-            Reporter.attachScreenshotToReport("Clicked cookies", test, "Accept and Cookies");
+            Screenshot.takeScreenshot("Clicked cookies");
+            Reporter.attachScreenshotToReport("Clicked cookies",test,"Accept and Cookies");
         }
     }
 
@@ -75,12 +76,13 @@ public class SearchActions {
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
             logs.logInfo("Verified the text Bracelets");
             test.log(Status.PASS, "Verified the text Bracelets");
-
-        } catch (Exception e) {
+            
+        }catch (Exception e) {
+            test.log(Status.INFO, "Verified the page loaded with Bracelets");
             logs.logError("Verified the page loaded with Bracelets");
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
-            Reporter.attachScreenshotToReport("verifyBracelets", test, "Verified the page loaded with Bracelets");
-
+            Screenshot.takeScreenshot("verifyBracelets");
+            Reporter.attachScreenshotToReport("verifyBracelets",test,"Verified the page loaded with Bracelets");
         }
     }
     /*
@@ -100,11 +102,13 @@ public class SearchActions {
             test.log(Status.INFO, "Searched For Earings");
             logs.logInfo("Searched For Earings");
             test.log(Status.PASS, "Searched For Earings");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            Screenshot.takeScreenshot("SearchForEarrings");
+        }catch (Exception e) {
             logs.logError("Searched For Earings");
+            test.log(Status.INFO, "Searched For Earings");
             test.log(Status.FAIL, "Searched For Earings");
-            Reporter.attachScreenshotToReport("EARRINGS", test, "Searched For Earings");
+            Screenshot.takeScreenshot("EARRINGS");
+            Reporter.attachScreenshotToReport("EARRINGS",test,"Searched For Earings");
         }
     }
     /*
@@ -122,10 +126,11 @@ public class SearchActions {
             logs.logInfo("Verified the text Earings");
             test.log(Status.PASS, "Verified the text Earings");
         } catch (Exception e) {
-            e.printStackTrace();
             logs.logError("Verified the text Earings");
+            test.log(Status.INFO, "Verified the text Earings");
             test.log(Status.FAIL, "Verified the text Earings");
-            Reporter.attachScreenshotToReport("VERIFYEARRINGS", test, "Verified the text Earings");
+            Screenshot.takeScreenshot("VERIFYEARRINGS");
+            Reporter.attachScreenshotToReport("VERIFYEARRINGS",test,"Verified the text Earings");
 
         }
 
@@ -142,14 +147,14 @@ public class SearchActions {
         try {
             helper.clickOnElement(SearchLocators.dismiss);
             logs.logInfo("Clicked On Dismiss");
+            test.log(Status.INFO, "Clicked On Dismiss");
             test.log(Status.PASS, "Clicked On Dismiss");
         } catch (Exception e) {
             test.log(Status.INFO, "Clicked On Dismiss");
             logs.logError("Clicked On Dismiss");
-            System.out.println(e.getMessage());
-            logs.logError("Clicked On Dismiss");
             test.log(Status.FAIL, "Clicked On Dismiss");
-            Reporter.attachScreenshotToReport("Dismiss", test, "Clicked On Dismiss");
+            Screenshot.takeScreenshot("Dismiss");
+            Reporter.attachScreenshotToReport("Dismiss",test,"Clicked On Dismiss");
 
         }
     }
@@ -168,12 +173,12 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On Brand");
             logs.logInfo("Clicked On Brand");
             test.log(Status.PASS, "Clicked On Brand");
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        }catch (Exception e) {
+            test.log(Status.INFO, "Clicked On Brand");
             logs.logError("Clicked On Brand");
             test.log(Status.FAIL, "Clicked On Brand");
-            Reporter.attachScreenshotToReport("Brand", test, "Clicked On Brand");
+            Screenshot.takeScreenshot("Brand");
+            Reporter.attachScreenshotToReport("Brand",test,"Clicked On Brand");
         }
     }
 
@@ -195,10 +200,11 @@ public class SearchActions {
             test.log(Status.PASS, "Clicked On Gucci");
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            test.log(Status.INFO, "Clicked On Gucci");
             logs.logError("Clicked On Gucci");
             test.log(Status.FAIL, "Clicked On Gucci");
-            Reporter.attachScreenshotToReport("Gucci", test, "Failed to click On Gucci");
+            Screenshot.takeScreenshot("Gucci");
+            Reporter.attachScreenshotToReport("Gucci",test,"Failed to click On Gucci");
         }
     }
 
@@ -218,11 +224,13 @@ public class SearchActions {
             test.log(Status.INFO, "Verified the Gucci");
             logs.logInfo("Verified the text Gucci");
             test.log(Status.PASS, "Verified the text Gucci");
+            Screenshot.takeScreenshot("gucci");
         } catch (Exception e) {
-            e.printStackTrace();
+            test.log(Status.INFO, "Verified the Gucci");
             logs.logError("Verified the text Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
-            Reporter.attachScreenshotToReport("VERIFYGUCCI", test, "Verified the text Gucci");
+            Screenshot.takeScreenshot("VERIFYGUCCI");
+            Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
 
         }
 
@@ -241,18 +249,18 @@ public class SearchActions {
         try {
             helper.javascriptScroll(SearchLocators.metalType);
             helper.hoverOverElement(SearchLocators.metalType);
-            helper.clickOnElement(SearchLocators.metalType);
-
+            helper.clickOnElement(SearchLocators.metalType); 
             helper.clickOnElement(SearchLocators.roseGold);
             test.log(Status.INFO, "Clicked On RoseGold");
             logs.logInfo("Clicked On RoseGold");
             test.log(Status.PASS, "Clicked On RoseGold");
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        }catch (Exception e) {
             logs.logError("Clicked On RoseGold");
+            test.log(Status.INFO, "Clicked On RoseGold");
             test.log(Status.FAIL, "Clicked On RoseGold");
-            Reporter.attachScreenshotToReport("RoseGold", test, "Failed to click On RoseGold");
+            Screenshot.takeScreenshot("RoseGold");
+            Reporter.attachScreenshotToReport("RoseGold",test,"Failed to click On RoseGold");
         }
     }
 
@@ -269,18 +277,17 @@ public class SearchActions {
         try {
             helper.hoverOverElement(SearchLocators.earRingStyle);
             helper.clickOnElement(SearchLocators.earRingStyle);
-
             helper.clickOnElement(SearchLocators.dropEarring);
             helper.clickOnElement(SearchLocators.dropEarring);
             test.log(Status.INFO, "Clicked On DropEarring");
             logs.logInfo("Clicked On DropEarring");
             test.log(Status.PASS, "Clicked On DropEarring");
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        }catch (Exception e) {
+            test.log(Status.INFO, "Clicked On DropEarring");
             logs.logError("Clicked On DropEarring");
             test.log(Status.FAIL, "Clicked On DropEarring");
-            Reporter.attachScreenshotToReport("Earring", test, "Failed to click On DropEarring");
+            Screenshot.takeScreenshot("Earring");
+            Reporter.attachScreenshotToReport("Earring",test,"Failed to click On DropEarring");
         }
 
     }
@@ -301,10 +308,11 @@ public class SearchActions {
             logs.logInfo("Verified the text Gucci");
             test.log(Status.PASS, "Verified the text Gucci");
         } catch (Exception e) {
-            e.printStackTrace();
             logs.logError("Verified the text Gucci");
+            test.log(Status.INFO, "Verified the Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
-            Reporter.attachScreenshotToReport("VERIFYGUCCI", test, "Verified the text Gucci");
+            Screenshot.takeScreenshot("VERIFYGUCCI");
+            Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
 
         }
 
@@ -324,12 +332,12 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On FirstProduct");
             logs.logInfo("Clicked On FirstProduct");
             test.log(Status.PASS, "Clicked On FirstProduct");
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        }catch (Exception e) {
             logs.logError("Clicked On FirstProduct");
+            test.log(Status.INFO, "Clicked On FirstProduct");
             test.log(Status.FAIL, "Clicked On FirstProduct");
-            Reporter.attachScreenshotToReport("First_Product", test, "Failed to click On the Product");
+            Screenshot.takeScreenshot("First_Product");
+            Reporter.attachScreenshotToReport("First_Product",test,"Failed to click On the Product");
 
         }
     }
@@ -347,11 +355,13 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On getLiveExpert");
             logs.logInfo("Clicked On getLiveExpert");
             test.log(Status.PASS, "Clicked On getLiveExpert");
+            Screenshot.takeScreenshot("GetLiveExpert");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            test.log(Status.INFO, "Clicked On getLiveExpert");
             logs.logError("Clicked On getLiveExpert");
             test.log(Status.FAIL, "Clicked On getLiveExpert");
-            Reporter.attachScreenshotToReport("getLiveExpert", test, "Failed to click On getLiveExpert");
+            Screenshot.takeScreenshot("getLiveExpert");
+            Reporter.attachScreenshotToReport("getLiveExpert",test,"Failed to click On getLiveExpert");
         }
 
     }
@@ -370,11 +380,12 @@ public class SearchActions {
             test.log(Status.INFO, "Captured Screenshot for Earrings");
             logs.logInfo("Captured Screenshot for Earrings");
             test.log(Status.PASS, "Captured Screenshot for Earrings");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        }catch (Exception e) {
+            test.log(Status.INFO, "Captured Screenshot for Earrings");
             logs.logError("Captured Screenshot for Earrings");
             test.log(Status.FAIL, "Captured Screenshot for Earrings");
-            Reporter.attachScreenshotToReport("EarringsScreenshot", test, "Failed to capture Earrings Screenshot");
+            Screenshot.takeScreenshot("EarringsScreenshot");
+            Reporter.attachScreenshotToReport("EarringsScreenshot",test,"Failed to capture Earrings Screenshot");
         }
     }
 
