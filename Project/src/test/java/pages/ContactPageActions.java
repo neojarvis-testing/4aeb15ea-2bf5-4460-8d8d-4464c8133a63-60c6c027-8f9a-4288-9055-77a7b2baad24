@@ -30,7 +30,7 @@ public class ContactPageActions extends Base {
      * Return Type : void
      */
     public ContactPageActions(ExtentTest test,LoggerHandler logs) {
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test=test;
         asserts = new Assertion(driver,test,logs);
         this.logs=logs;

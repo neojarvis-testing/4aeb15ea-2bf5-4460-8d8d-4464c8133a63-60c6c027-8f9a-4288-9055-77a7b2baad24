@@ -11,23 +11,8 @@ import utils.Base;
 import utils.LoggerHandler;
 
 public class ContactStepDefinition {
-
-    
-    
-
-  
-  
-   
-  
-  
-   
-   
-
-
-
-
     LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
     ContactPageActions contactActions  = new ContactPageActions( test, logs);
 
 

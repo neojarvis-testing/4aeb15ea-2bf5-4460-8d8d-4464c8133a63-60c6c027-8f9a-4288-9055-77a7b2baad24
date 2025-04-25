@@ -24,7 +24,7 @@ public class WatchesPage extends Base{
     *Return Type:none
     */
     public WatchesPage(ExtentTest test, LoggerHandler logs){
-        helper=new WebDriverHelper(driver);
+        helper=new WebDriverHelper(driver, logs);
         this.test = test;
         asserts = new Assertion(driver,test,logs);
         this.logs=logs;
