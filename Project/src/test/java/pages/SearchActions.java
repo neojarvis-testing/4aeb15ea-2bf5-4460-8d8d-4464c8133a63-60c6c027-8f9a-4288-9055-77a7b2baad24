@@ -34,8 +34,8 @@ public class SearchActions {
         this.driver = driver;
         helper = new WebDriverHelper(driver, logs);
         this.test = test;
-        assertion = new Assertion(driver, test, logs);
-        this.logs = logs;
+        assertion = new Assertion(driver,test, logs);
+        this.logs=logs;
     }
     /*
      * Author: Kotha Sai Ragunath

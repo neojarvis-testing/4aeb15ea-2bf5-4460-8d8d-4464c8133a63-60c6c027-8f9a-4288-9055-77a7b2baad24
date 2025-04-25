@@ -12,7 +12,7 @@ import utils.LoggerHandler;
 
 public class RingsStepDefinition {
 LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.reports.createTest("RingsPage");
     RingsPageActions contactActions  = new RingsPageActions( test, logs);
 
     @Given("I am on the Mayors website.")

@@ -23,10 +23,11 @@ public class AboutMayors extends Base {
      * Return type: none
      * Parameters: An ExtentTest instance
      */
-    public AboutMayors(ExtentTest test, LoggerHandler logs) {
+    public AboutMayors(ExtentTest test,LoggerHandler logs)
+    {
         helper = new WebDriverHelper(driver, logs);
-        this.test = test;
-        assertt = new Assertion(driver, test, logs);
+        this.test=test;
+        assertt = new Assertion(driver,test, logs);
         this.logs = logs;
     }
 

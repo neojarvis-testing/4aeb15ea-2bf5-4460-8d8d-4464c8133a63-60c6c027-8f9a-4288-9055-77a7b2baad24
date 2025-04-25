@@ -29,11 +29,11 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public ContactPageActions(ExtentTest test, LoggerHandler logs) {
+    public ContactPageActions(ExtentTest test,LoggerHandler logs) {
         helper = new WebDriverHelper(driver, logs);
-        this.test = test;
-        asserts = new Assertion(driver, test, logs);
-        this.logs = logs;
+        this.test=test;
+        asserts = new Assertion(driver,test,logs);
+        this.logs=logs;
     }
 
     /*
@@ -98,17 +98,16 @@ public class ContactPageActions extends Base {
     public void clickOnLuxury() {
         try {
             driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.luxury, 5);
-            helper.clickOnElement(ContactPageLocators.luxury);
-            logs.logInfo("Clicked on Luxury");
-            test.log(Status.PASS, "Clicked on Luxury");
-
-        } catch (Exception e) {
-            logs.logError("Clicked Store");
-            test.log(Status.FAIL, "Clicked Store");
-            Screenshot.takeScreenshot("src5");
-            Reporter.attachScreenshotToReport("Brands", test, "src5");
-
+       helper.waitForElementToBeVisible(ContactPageLocators.luxury, 5);
+        helper.clickOnElement(ContactPageLocators.luxury);
+        logs.logInfo("Clicked on Luxury");
+        test.log(Status.PASS,"Clicked on Luxury");
+ 
+    }catch(Exception e){
+        logs.logError("Clicked Store");
+        test.log(Status.FAIL, "Clicked Store");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
         }
     }
 
@@ -129,22 +128,37 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public void clickOnStore() {
-        try {
-            driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.store, 5);
-            helper.clickOnElement(ContactPageLocators.store);
-            logs.logInfo("Clicked on Store");
-            test.log(Status.PASS, "Clicked on Store");
+    public void clickOnStore(){
+       try{
+        driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.store, 5);
+         helper.clickOnElement(ContactPageLocators.store);
+         logs.logInfo("Clicked on Store");
+        test.log(Status.PASS,"Clicked on Store");
+        Screenshot.takeScreenshot("src6");
+        Reporter.attachScreenshotToReport("src6", test, "src5");
 
-        } catch (Exception e) {
-            logs.logError("Clicked Store");
-            test.log(Status.FAIL, "Clicked Store");
-            Screenshot.takeScreenshot("src5");
-            Reporter.attachScreenshotToReport("Brands", test, "src5");
+       }
+       catch(Exception e){
+        logs.logError("Clicked Store");
+        test.log(Status.FAIL, "Clicked Store");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("Brands", test, "src5");
+
+    }
+}
+public void verifyStore(String str5,String str6){
+    try{
+        asserts.verifyTitleOfPage(str5);
+        asserts.verifyURLOfPage(str6);
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
         }
     }
+    catch(Exception e){
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
     public void verifyStore(String str5, String str6) {
         try {
@@ -166,12 +180,19 @@ public class ContactPageActions extends Base {
     public void clickOnDelivery() {
         try {
             driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.delivery, 5);
+         helper.clickOnElement(ContactPageLocators.delivery);
+         logs.logInfo("Clicked on Delivery");
+        test.log(Status.PASS,"Clicked on Delivery");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
+ 
+        }
+        catch(Exception e){
             helper.waitForElementToBeVisible(ContactPageLocators.delivery, 5);
             helper.clickOnElement(ContactPageLocators.delivery);
             logs.logInfo("Clicked on Delivery");
             test.log(Status.PASS, "Clicked on Delivery");
-
-        } catch (Exception e) {
             logs.logError("Clicked Delivery");
             test.log(Status.FAIL, "Clicked Delivery");
             Screenshot.takeScreenshot("src2");
@@ -185,9 +206,9 @@ public class ContactPageActions extends Base {
         try {
             asserts.verifyTitleOfPage(str7);
             asserts.verifyURLOfPage(str8);
-
-        } catch (Exception e) {
-
+ 
+        }
+        catch(Exception e){
         }
     }
 
@@ -198,19 +219,22 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public void clickOnclick() {
-        try {
-            driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.click, 5);
-            helper.clickOnElement(ContactPageLocators.click);
-            logs.logInfo("Clicked on Click and collect");
-            test.log(Status.PASS, "Clicked on Click and collect");
+     public void clickOnclick(){
+       try{
+        driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.click, 5);
+         helper.clickOnElement(ContactPageLocators.click);
+         logs.logInfo("Clicked on Click and collect");
+        test.log(Status.PASS,"Clicked on Click and collect");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
 
-        } catch (Exception e) {
-            logs.logError("Clicked Click and collect");
-            test.log(Status.FAIL, "Clicked Click and collect");
-            Screenshot.takeScreenshot("src99");
-            Reporter.attachScreenshotToReport("Brands", test, "src99");
+       }
+       catch(Exception e){
+        logs.logError("Clicked Click and collect");
+        test.log(Status.FAIL, "Clicked Click and collect");
+        Screenshot.takeScreenshot("src99");
+        Reporter.attachScreenshotToReport("Brands", test, "src99");
 
         }
     }
@@ -232,21 +256,24 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public void clickOnReturn() {
-        try {
-            driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.retpolicy, 5);
-            helper.clickOnElement(ContactPageLocators.retpolicy);
-            logs.logInfo("Clicked on Return");
-            test.log(Status.PASS, "Clicked on Return");
+     public void clickOnReturn(){
+       try{
+        driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.retpolicy, 5);
+         helper.clickOnElement(ContactPageLocators.retpolicy);
+         logs.logInfo("Clicked on Return");
+        test.log(Status.PASS,"Clicked on Return");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
+     
+       }
+       catch(Exception e){
+        logs.logError("Clicked Return");
+        test.log(Status.FAIL, "Clicked Return");
+        Screenshot.takeScreenshot("src11");
+        Reporter.attachScreenshotToReport("Brands", test, "src11");
 
-        } catch (Exception e) {
-            logs.logError("Clicked Return");
-            test.log(Status.FAIL, "Clicked Return");
-            Screenshot.takeScreenshot("src11");
-            Reporter.attachScreenshotToReport("Brands", test, "src11");
-
-        }
+        } 
     }
 
     public void verifyReturn(String str11, String str12) {
@@ -266,21 +293,23 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public void clickOnAffrim() {
-        try {
-            driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.affrim, 5);
-            helper.clickOnElement(ContactPageLocators.affrim);
-            logs.logInfo("Clicked on Affrim");
-            test.log(Status.PASS, "Clicked on Affrim");
-
-        } catch (Exception e) {
-            logs.logError("Clicked Affrim");
-            test.log(Status.FAIL, "Clicked Affrim");
-            Screenshot.takeScreenshot("src12");
-            Reporter.attachScreenshotToReport("Brands", test, "src12");
-
-        }
+     public void clickOnAffrim(){
+       try{
+        driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.affrim, 5);
+         helper.clickOnElement(ContactPageLocators.affrim);
+         logs.logInfo("Clicked on Affrim");
+        test.log(Status.PASS,"Clicked on Affrim");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
+        
+       }
+       catch(Exception e){
+        logs.logError("Clicked Affrim");
+        test.log(Status.FAIL, "Clicked Affrim");
+        Screenshot.takeScreenshot("src12");
+        Reporter.attachScreenshotToReport("Brands", test, "src12");
+       }
     }
 
     public void verifyAffrim(String str13, String str14) {
@@ -300,19 +329,22 @@ public class ContactPageActions extends Base {
      * Parameters : N/A
      * Return Type : void
      */
-    public void clickOnFeedback() {
-        try {
-            driver.navigate().back();
-            helper.waitForElementToBeVisible(ContactPageLocators.feedback, 5);
-            helper.clickOnElement(ContactPageLocators.feedback);
-            logs.logInfo("Clicked on Feedback");
-            test.log(Status.PASS, "Clicked on Feedback");
-
-        } catch (Exception e) {
-            logs.logError("Clicked Feedback");
-            test.log(Status.FAIL, "Clicked Feedback");
-            Screenshot.takeScreenshot("src13");
-            Reporter.attachScreenshotToReport("Brands", test, "src13");
+     public void clickOnFeedback(){
+       try{
+        driver.navigate().back();
+        helper.waitForElementToBeVisible(ContactPageLocators.feedback, 5);
+         helper.clickOnElement(ContactPageLocators.feedback);
+         logs.logInfo("Clicked on Feedback");
+        test.log(Status.PASS,"Clicked on Feedback");
+        Screenshot.takeScreenshot("src5");
+        Reporter.attachScreenshotToReport("src5", test, "src5");
+        
+       }
+       catch(Exception e){
+        logs.logError("Clicked Feedback");
+        test.log(Status.FAIL, "Clicked Feedback");
+        Screenshot.takeScreenshot("src13");
+        Reporter.attachScreenshotToReport("Brands", test, "src13");
 
         }
 
@@ -322,39 +354,13 @@ public class ContactPageActions extends Base {
         try {
             asserts.verifyTitleOfPage(str15);
             asserts.verifyURLOfPage(str16);
-
-        } catch (Exception e) {
-
+    
+        }
+        catch(Exception e){
+            test.log(Status.FAIL, "Verified failed");
+            Screenshot.takeScreenshot("src13");
+            Reporter.attachScreenshotToReport("Brands", test, "src13");
         }
     }
-
-    /*
-     * Method Name : runContact
-     * Author Name : Krishna Reddy
-     * Description : This method is a cluster of all the methods which needs to be
-     * executed
-     * Parameters : N/A
-     * Return Type : void
-     */
-    // public void runContact(){
-    // clickOnAccept();
-    // clickOnContact();
-    // verifyContactUs();
-    // clickOnLuxury();
-    // verifyLuxuryServices();
-    // clickOnStore();
-    // verifyStore();
-    // clickOnDelivery();
-    // verifyDelivery();
-    // clickOnclick();
-    // verifyClick();
-    // clickOnReturn();
-    // verifyReturn();
-    // clickOnAffrim();
-    // verifyAffrim();
-    // clickOnFeedback();
-    // verifyFeedback();
-
-    // }
 
 }
