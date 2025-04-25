@@ -14,10 +14,27 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+import java.util.Set;
+import java.time.Duration;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 public class WebDriverHelper {
     private WebDriver driver;
-    public  WebDriverHelper(WebDriver driver){
+    LoggerHandler logs;
+    public  WebDriverHelper(WebDriver driver,LoggerHandler logs){
         this.driver = driver;
+        this.logs = logs;
        }
     /*
      * Method Name : waitForElementToBeVisible
@@ -31,7 +48,7 @@ public class WebDriverHelper {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (Exception e) {
-          
+            logs.logError("Element not visible");
         }
     }
     /*
@@ -46,7 +63,7 @@ public class WebDriverHelper {
             new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds))
                 .until(ExpectedConditions.elementToBeClickable(locator));
         } catch (Exception e) {
-
+            logs.logError("Element not clickable");
         }
     }
     /*
@@ -61,7 +78,7 @@ public class WebDriverHelper {
         WebElement elem = driver.findElement(locator);
         elem.click();
         }catch(Exception e){
-
+            logs.logError("Element not clicked");
         }
      }
     /*
@@ -76,7 +93,7 @@ public class WebDriverHelper {
             WebElement elem = driver.findElement(locator);
         elem.sendKeys(text);
         } catch (Exception e) {
-
+            logs.logError("Value entered");
         }
         
     }
@@ -93,7 +110,7 @@ public class WebDriverHelper {
         Select select = new Select(element);
         select.selectByVisibleText(value);
         } catch (Exception e) {
-
+            logs.logError("Selected value from dropdown");
         }
         
     }
@@ -110,7 +127,7 @@ public class WebDriverHelper {
           Actions actions = new Actions(driver);
           actions.moveToElement(webElement).perform();
         } catch (Exception e) {
-
+            logs.logError("Hovered on element");
         }
     }
     /*
@@ -125,7 +142,7 @@ public class WebDriverHelper {
            WebElement webElement = driver.findElement(locator);
           webElement.sendKeys(data);
         } catch (Exception e) {
-
+           logs.logError("Value entered");
         }
           
     }
@@ -146,7 +163,7 @@ public class WebDriverHelper {
             }
         }
         } catch (Exception e) {
-
+            logs.logError("Window not switched");
         }
     }
     /*
@@ -161,7 +178,7 @@ public class WebDriverHelper {
             WebElement webElement = driver.findElement(locator);
             webElement.sendKeys(Keys.ENTER);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logs.logError("Enter action performed");
         }
     }
     /*
@@ -177,7 +194,7 @@ public class WebDriverHelper {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView();", element);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            logs.logError("Scroll action performed");
         }    
     }
     /*
@@ -192,70 +209,8 @@ public class WebDriverHelper {
             Alert alert = driver.switchTo().alert();
             alert.accept();
         } catch (Exception e) {
-       
+          logs.logError("Clicked on alert")
         }
-    }
-    /*
-     * Method Name : javascriptScroll
-     * Author Name : Praneeth
-     * Description : This method is used to scroll to the element 
-     * Parameters : locator
-     * Return Type : void
-     */
-    public void javascriptScroll(By locator) {
-        try {
-            WebElement element = driver.findElement(locator);
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView();", element);
-        } catch (Exception e) {
-            
-        }    
-    }
-    /*
-     * Method Name : alertMessage
-     * Author Name : Praneeth
-     * Description : This method is used to handle alerts
-     * Parameters : path
-     * Return Type : void
-     */
-    public void alertMessage(By path){
-        try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        } catch (Exception e) {
-
-        }
-    }
-    /*
-     * Method Name : javascriptScroll
-     * Author Name : Praneeth
-     * Description : This method is used to scroll to the element 
-     * Parameters : locator
-     * Return Type : void
-     */
-    public void javascriptScroll(By locator) {
-        try {
-            WebElement element = driver.findElement(locator);
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].scrollIntoView();", element);
-        } catch (Exception e) {
-
-        }    
-    }
-    /*
-     * Method Name : alertMessage
-     * Author Name : Praneeth
-     * Description : This method is used to handle alerts
-     * Parameters : path
-     * Return Type : void
-     */
-    public void alertMessage(By path){
-        try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        } catch (Exception e) {
-
-        }    
     }
     /*
      * Method Name : excelReading

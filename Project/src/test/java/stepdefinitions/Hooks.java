@@ -5,35 +5,28 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-import utils.*;
-
+import utils.Base;
+import utils.Reporter;
+ 
 public class Hooks extends Base{
-    public static ExtentReports report;
-
+    public static ExtentReports reports;
     @BeforeAll
-    public static void iniReport()
-    {
-        report = Reporter.createReport("Mayors_Report");
+    public static void report(){
+        reports = Reporter.createReport("Mayors_Report");
     }
  
     @Before
-    public void launch(){
+    public void open(){
         openBrowser();
     }
-
     @After
-    public void closeBrowser()
-    {
-        if(driver!=null)
-        {
-            driver.quit();
-        }
-    }
-
-    @AfterAll
-    public static void flush(){
-        report.flush();
+    public void close(){
+        driver.quit();
     }
  
+    @AfterAll
+    public static void generate(){
+        reports.flush();
+    }
 }
 

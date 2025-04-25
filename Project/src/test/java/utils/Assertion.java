@@ -19,7 +19,7 @@ public class Assertion {
 	}
     /*
      * Method Name : verifyTextInPage
-     * Author Name : Pavan
+     * Author Name : Praneeth
      * Description : This method used to verify the text of a element
      * Parameters : locator , value
      * Return Type : void
@@ -38,7 +38,7 @@ public class Assertion {
 	}
     /*
      * Method Name : verifyURLOfPage
-     * Author Name : Pavan
+     * Author Name : Praneeth
      * Description : This method is used to verify the url of the website
      * Parameters : value
      * Return Type : void
@@ -58,7 +58,7 @@ public class Assertion {
 	}
     /*
      * Method Name : verifyTitleOfPage
-     * Author Name : Pavan
+     * Author Name : Praneeth
      * Description : This method is used to get the title of the page
      * Parameters : value
      * Return Type : void
