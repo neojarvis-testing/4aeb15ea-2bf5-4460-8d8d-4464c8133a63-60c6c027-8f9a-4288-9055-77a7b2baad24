@@ -10,7 +10,7 @@ import utils.LoggerHandler;
 
 public class WatchesStepDefinition {
     LoggerHandler logs;
-    ExtentTest test ;
+    ExtentTest test;
     WatchesPage selectingWatch;
 @Given("I click on accept cookies")
 public void i_click_on_accept_cookies() {
