@@ -32,10 +32,10 @@ public class BraceletsActions {
 
     public BraceletsActions(WebDriver driver, ExtentTest test, LoggerHandler logs) {
         this.driver = driver;
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test = test;
         this.logs = logs;
-        assertion = new Assertion(driver, logs,test);
+        assertion = new Assertion(driver, test,logs);
         
     }
     /*
@@ -109,6 +109,7 @@ public class BraceletsActions {
             logs.logError("Verified the page loaded with Bracelets");
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
+            Screenshot.takeScreenshot("verifyBracelets");
             Reporter.attachScreenshotToReport("verifyBracelets", test, "Verified the page loaded with Bracelets");
 
         }
@@ -134,6 +135,7 @@ public class BraceletsActions {
             logs.logError("Clicked On Bracelets");
             test.log(Status.INFO, "Clicked On Bracelets");
             test.log(Status.FAIL, "Clicked On Bracelets");
+            Screenshot.takeScreenshot("Bracelets");
             Reporter.attachScreenshotToReport("Clicked On Bracelets", test, "Clicked Bracelets");
         }
     }
@@ -157,6 +159,7 @@ public class BraceletsActions {
             logs.logError("Verified the text Jewelry");
             test.log(Status.INFO, "Verified the text Jewelry");
             test.log(Status.FAIL, "Verified the text Jewelry");
+            Screenshot.takeScreenshot("Verified the text Jewelr");
             Reporter.attachScreenshotToReport("Verified the text Jewelr", test, "Jewelry");
 
         }
@@ -181,6 +184,7 @@ public class BraceletsActions {
             logs.logError("Clicked On Dismis");
             test.log(Status.INFO, "Clicked On Dismiss");
             test.log(Status.FAIL, "Clicked On Dismiss");
+            Screenshot.takeScreenshot("Clicked On Dismiss");
             Reporter.attachScreenshotToReport("Clicked On Dismiss", test, "Dismiss");
         }
     }
@@ -207,6 +211,7 @@ public class BraceletsActions {
             logs.logInfo("Clicked On Yellow Gold");
             logs.logError("Clicked On Yellow Gold");  
             test.log(Status.FAIL, "Clicked On Yellow Gold");
+            Screenshot.takeScreenshot("Clicked On Yellow Gold");
             Reporter.attachScreenshotToReport("Clicked On Yellow Gold", test, "Yellow Gold");
         }
     }
@@ -262,6 +267,7 @@ public class BraceletsActions {
             test.log(Status.INFO, "Clicked On Diamond");
             logs.logError("Clicked On Diamond");
             test.log(Status.FAIL, "Clicked On Diamond");
+            Screenshot.takeScreenshot("Clicked On Diamond");
             Reporter.attachScreenshotToReport("Clicked On Diamond", test, "Diamond");
         }
     }
@@ -286,6 +292,7 @@ public class BraceletsActions {
             logs.logError("Verified the page loaded with Diamond");
             test.log(Status.INFO, "Verified the page loaded with Diamond");
             test.log(Status.FAIL, "Verified the page loaded with Diamond");
+            Screenshot.takeScreenshot("verifyDiamond");
             Reporter.attachScreenshotToReport("verifyDiamond", test, "Verified the page loaded with Diamond");
 
         }
@@ -312,6 +319,7 @@ public class BraceletsActions {
             test.log(Status.INFO, "Clicked On Bracelets Under BraceletStyles");
             logs.logError("Clicked On Bracelets Under BraceletStyles");
             test.log(Status.FAIL, "Clicked On Bracelets Under BraceletStyles");
+            Screenshot.takeScreenshot("Clicked On Bracelets Under BraceletsStyles");
             Reporter.attachScreenshotToReport("Clicked On Bracelets Under BraceletStyles", test, "BraceletsStyle");
         }
     }
@@ -336,6 +344,7 @@ public class BraceletsActions {
             logs.logError("Verified the page loaded with Bracelets");
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
+            Screenshot.takeScreenshot("verifyBracelets");
             Reporter.attachScreenshotToReport("verifyBracelets", test, "Verified the page loaded with Bracelets");
 
         }
@@ -361,6 +370,7 @@ public class BraceletsActions {
             logs.logError("Clicked On First Product");
             test.log(Status.INFO, "Clicked On First Product");
             test.log(Status.FAIL, "Clicked On First Product");
+            Screenshot.takeScreenshot("Clicked On First Product");
             Reporter.attachScreenshotToReport("Clicked On First Product", test, "Product");
         }
     }
@@ -384,6 +394,7 @@ public class BraceletsActions {
             test.log(Status.INFO, "Clicked On AddToShopping");
             logs.logError("Clicked On AddToShopping");
             test.log(Status.FAIL, "Clicked On AddToShopping");
+            Screenshot.takeScreenshot("Clicked On AddToShopping");
             Reporter.attachScreenshotToReport("Clicked On AddToShopping", test, "AddToShopping");
         }
 
@@ -407,6 +418,7 @@ public class BraceletsActions {
             logs.logError("Captured Bracelets Screenshot");
             test.log(Status.INFO, "Clicked On AddToShopping");
             test.log(Status.FAIL, "Clicked On Bracelets Screenshot");
+            Screenshot.takeScreenshot("Clicked On Bracelets Screenshot");
             Reporter.attachScreenshotToReport("Clicked On Bracelets Screenshot", test, "Bracelets Screenshot");
         }
     }

@@ -30,10 +30,10 @@ public class SearchActions {
     */
     public SearchActions(WebDriver driver, ExtentTest test,LoggerHandler logs) {
         this.driver = driver;
-        helper = new WebDriverHelper(driver);
+        helper = new WebDriverHelper(driver, logs);
         this.test = test;
         this.logs=logs;
-        assertion = new Assertion(driver,logs,test);
+        assertion = new Assertion(driver,test,logs);
         
     }
      /*Author: Kotha Sai Ragunath
@@ -54,6 +54,7 @@ public class SearchActions {
             logs.logError("Clicked On Accept and Cookies");
             test.log(Status.INFO, "Clicked On Accept and Cookies");
             test.log(Status.FAIL, "Clicked On Accept and Cookies");
+            Screenshot.takeScreenshot("Clicked cookies");
             Reporter.attachScreenshotToReport("Clicked cookies",test,"Accept and Cookies");
         }
     }
@@ -80,6 +81,7 @@ public class SearchActions {
             test.log(Status.INFO, "Verified the page loaded with Bracelets");
             logs.logError("Verified the page loaded with Bracelets");
             test.log(Status.FAIL, "Verified the page loaded with Bracelets");
+            Screenshot.takeScreenshot("verifyBracelets");
             Reporter.attachScreenshotToReport("verifyBracelets",test,"Verified the page loaded with Bracelets");
             
         }
@@ -108,6 +110,7 @@ public class SearchActions {
             logs.logError("Searched For Earings");
             test.log(Status.INFO, "Searched For Earings");
             test.log(Status.FAIL, "Searched For Earings");
+            Screenshot.takeScreenshot("EARRINGS");
             Reporter.attachScreenshotToReport("EARRINGS",test,"Searched For Earings");
         }
     }
@@ -129,6 +132,7 @@ public class SearchActions {
             logs.logError("Verified the text Earings");
             test.log(Status.INFO, "Verified the text Earings");
             test.log(Status.FAIL, "Verified the text Earings");
+            Screenshot.takeScreenshot("VERIFYEARRINGS");
             Reporter.attachScreenshotToReport("VERIFYEARRINGS",test,"Verified the text Earings");
 
         }
@@ -152,6 +156,7 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On Dismiss");
             logs.logError("Clicked On Dismiss");
             test.log(Status.FAIL, "Clicked On Dismiss");
+            Screenshot.takeScreenshot("Dismiss");
             Reporter.attachScreenshotToReport("Dismiss",test,"Clicked On Dismiss");
             
 
@@ -177,6 +182,7 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On Brand");
             logs.logError("Clicked On Brand");
             test.log(Status.FAIL, "Clicked On Brand");
+            Screenshot.takeScreenshot("Brand");
             Reporter.attachScreenshotToReport("Brand",test,"Clicked On Brand");
         }
     }
@@ -203,6 +209,7 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On Gucci");
             logs.logError("Clicked On Gucci");
             test.log(Status.FAIL, "Clicked On Gucci");
+            Screenshot.takeScreenshot("Gucci");
             Reporter.attachScreenshotToReport("Gucci",test,"Failed to click On Gucci");
         }
     }
@@ -230,6 +237,7 @@ public class SearchActions {
             test.log(Status.INFO, "Verified the Gucci");
             logs.logError("Verified the text Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
+            Screenshot.takeScreenshot("VERIFYGUCCI");
             Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
 
         }
@@ -263,6 +271,7 @@ public class SearchActions {
             logs.logError("Clicked On RoseGold");
             test.log(Status.INFO, "Clicked On RoseGold");
             test.log(Status.FAIL, "Clicked On RoseGold");
+            Screenshot.takeScreenshot("RoseGold");
             Reporter.attachScreenshotToReport("RoseGold",test,"Failed to click On RoseGold");
         }
     }
@@ -291,6 +300,7 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On DropEarring");
             logs.logError("Clicked On DropEarring");
             test.log(Status.FAIL, "Clicked On DropEarring");
+            Screenshot.takeScreenshot("Earring");
             Reporter.attachScreenshotToReport("Earring",test,"Failed to click On DropEarring");
         }
 
@@ -317,6 +327,7 @@ public class SearchActions {
             logs.logError("Verified the text Gucci");
             test.log(Status.INFO, "Verified the Gucci");
             test.log(Status.FAIL, "Verified the text Gucci");
+            Screenshot.takeScreenshot("VERIFYGUCCI");
             Reporter.attachScreenshotToReport("VERIFYGUCCI",test,"Verified the text Gucci");
 
         }
@@ -343,6 +354,7 @@ public class SearchActions {
             logs.logError("Clicked On FirstProduct");
             test.log(Status.INFO, "Clicked On FirstProduct");
             test.log(Status.FAIL, "Clicked On FirstProduct");
+            Screenshot.takeScreenshot("First_Product");
             Reporter.attachScreenshotToReport("First_Product",test,"Failed to click On the Product");
 
         }
@@ -367,6 +379,7 @@ public class SearchActions {
             test.log(Status.INFO, "Clicked On getLiveExpert");
             logs.logError("Clicked On getLiveExpert");
             test.log(Status.FAIL, "Clicked On getLiveExpert");
+            Screenshot.takeScreenshot("getLiveExpert");
             Reporter.attachScreenshotToReport("getLiveExpert",test,"Failed to click On getLiveExpert");
         }
 
@@ -391,6 +404,7 @@ public class SearchActions {
             test.log(Status.INFO, "Captured Screenshot for Earrings");
             logs.logError("Captured Screenshot for Earrings");
             test.log(Status.FAIL, "Captured Screenshot for Earrings");
+            Screenshot.takeScreenshot("EarringsScreenshot");
             Reporter.attachScreenshotToReport("EarringsScreenshot",test,"Failed to capture Earrings Screenshot");
         }
     }

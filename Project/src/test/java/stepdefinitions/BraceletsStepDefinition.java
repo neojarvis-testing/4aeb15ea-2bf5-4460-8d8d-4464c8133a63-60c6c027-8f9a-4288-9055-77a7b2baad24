@@ -11,7 +11,7 @@ import utils.Base;
 
 public class BraceletsStepDefinition {
     LoggerHandler logs = new LoggerHandler();
-    ExtentTest test = Hooks.report.createTest("TestOnBracelets");
+    ExtentTest test = Hooks.reports.createTest("TestOnBracelets");
     BraceletsActions braceletactions  = new BraceletsActions(Base.driver, test, logs);
 
 @Given("I am on the Website")
