@@ -9,12 +9,12 @@ import io.cucumber.java.BeforeAll;
 import utils.Base;
 import utils.Reporter;
 
-public class Hooks extends Base{
-    static ExtentReports report;
+public class Hooks extends Base {
+    public static ExtentReports reports;
+     
     @BeforeAll
-    public static void generate(){
-        report =Reporter.createReport("Mayors_Report");
-
+    public static void openReport(){
+        reports = Reporter.createReport("Mayors_Report");
     }
 
     @Before
@@ -26,10 +26,9 @@ public class Hooks extends Base{
     public void close(){
         driver.quit();
     }
-
     @AfterAll
-    public static void flush(){
-        report.flush();
+    public static void tearReport(){
+        reports.flush();
     }
-
 }
+
