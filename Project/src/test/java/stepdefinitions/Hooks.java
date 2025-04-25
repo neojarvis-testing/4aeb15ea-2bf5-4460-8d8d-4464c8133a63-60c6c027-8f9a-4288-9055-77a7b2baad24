@@ -1,19 +1,19 @@
 package stepdefinitions;
+
 import com.aventstack.extentreports.ExtentReports;
- 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-import utils.Base;
-import utils.Reporter;
+import utils.*;
 
 public class Hooks extends Base{
-    static ExtentReports report;
+    public static ExtentReports report;
+
     @BeforeAll
-    public static void generate(){
-        report =Reporter.createReport("Mayors_Report");
- 
+    public static void iniReport()
+    {
+        report = Reporter.createReport("Mayors_Report");
     }
  
     @Before
@@ -22,10 +22,14 @@ public class Hooks extends Base{
     }
 
     @After
-    public void close(){
-        driver.quit();
+    public void closeBrowser()
+    {
+        if(driver!=null)
+        {
+            driver.quit();
+        }
     }
- 
+
     @AfterAll
     public static void flush(){
         report.flush();
